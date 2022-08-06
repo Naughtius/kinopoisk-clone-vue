@@ -1,0 +1,14 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@import url("./slider.scss");
+
+body {
+  overflow-x: hidden;
+}
+
+body,
+html,
+#app {
+  height: 100%;
+}

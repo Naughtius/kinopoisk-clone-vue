@@ -1,0 +1,10 @@
+{
+  "sidebar": {
+    "home": "Home",
+    "about": "About",
+    "search": "Search...",
+    "listEmpty": "THE LIST IS EMPTY",
+    "list": "MY LISTS",
+    "listCreate": "Create list"
+  }
+}
