@@ -1,4 +1,5 @@
 # kinopoisk-vue
+DEMO => https://kinopoisk-vue.herokuapp.com
 
 ## Project setup
 ```
