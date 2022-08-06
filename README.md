@@ -1,6 +1,8 @@
 # kinopoisk-vue
 DEMO => https://kinopoisk-vue.herokuapp.com
 
+Vue, Vuex, i18n, tailwind, api
+
 ## Project setup
 ```
 yarn install
