@@ -13,6 +13,15 @@ const search: Module<ISearchState, IStore> = {
     items: [],
     isLoading: true,
   },
+  getters: {
+    getOptionsMovie(state) {
+      return [...state.items].map((item: any) => ({
+        value: item.filmId,
+        label: item.nameRu,
+        ...item,
+      }));
+    },
+  },
   mutations: {
     SET_ITEMS: (state, items) => (state.items = items),
     SET_LOADING_TRUE: (state) => (state.isLoading = true),

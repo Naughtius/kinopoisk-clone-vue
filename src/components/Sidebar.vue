@@ -40,6 +40,7 @@
           <p class="text-xs text-gray-500 p-2">{{ $t("sidebar.listEmpty") }}</p>
         </ul>
         <button
+          @click="changeActiveCreateListModal"
           type="button"
           class="text-white dark:text-[#1F1F1F] bg-[#F33F3F] hover:bg-[#F33F3F]/90 focus:ring-4 focus:outline-none focus:ring-[#F33F3F]/50 font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center dark:focus:ring-[#F33F3F]/55 mr-2 mb-2 w-full mt-4 justify-center"
         >
@@ -61,17 +62,25 @@
         <dark-mode-switcher />
       </div>
     </div>
+    <modal-create-list
+      :show="isCreateListModal"
+      :handleClose="changeActiveCreateListModal"
+      title="Создать список"
+    />
   </aside>
 </template>
 
 <script lang="ts">
 import { defineComponent } from "vue";
 import homeIcon from "@/assets/icons/home.svg";
+import aboutIcon from "@/assets/icons/about.svg";
+import loginIcon from "@/assets/icons/sign-in.svg";
 import SearchForm from "@/components/SearchForm.vue";
 import SidebarItem from "@/components/SidebarItem.vue";
 import LocaleSwitcher from "@/components/LocaleSwitcher.vue";
 import { ISidebarLink } from "@/types/sidebar";
 import DarkModeSwitcher from "@/components/DarkModeSwitcher.vue";
+import ModalCreateList from "./Modals/ModalCreateList.vue";
 
 export default defineComponent({
   name: "SibeBar",
@@ -80,10 +89,12 @@ export default defineComponent({
     "sidebar-item": SidebarItem,
     "locale-switcher": LocaleSwitcher,
     "dark-mode-switcher": DarkModeSwitcher,
+    ModalCreateList,
   },
   data() {
     return {
       myList: [] as ISidebarLink[],
+      isCreateListModal: false,
     };
   },
   computed: {
@@ -99,9 +110,20 @@ export default defineComponent({
           id: 2,
           name: this.$t("sidebar.about"),
           href: "/about",
-          icon: homeIcon,
+          icon: aboutIcon,
+        },
+        {
+          id: 3,
+          name: this.$t("sidebar.login"),
+          href: "/auth/sign-in",
+          icon: loginIcon,
         },
       ];
+    },
+  },
+  methods: {
+    changeActiveCreateListModal() {
+      this.isCreateListModal = !this.isCreateListModal;
     },
   },
 });

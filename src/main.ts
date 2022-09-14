@@ -4,7 +4,9 @@ import InlineSvg from "vue-inline-svg";
 import router from "./router";
 import store from "./store/index";
 import i18n from "./i18n";
+import Antd from "ant-design-vue";
 // Styles
+import "ant-design-vue/dist/antd.css";
 import "./styles/common.scss";
 // Components
 import PremierMovie from "./components/PremierMovie.vue";
@@ -17,4 +19,4 @@ app.component("premier-movie", PremierMovie);
 // eslint-disable-next-line vue/multi-word-component-names
 app.component("modal", Modal);
 
-app.use(i18n).use(store).use(router).mount("#app");
+app.use(Antd).use(i18n).use(store).use(router).mount("#app");

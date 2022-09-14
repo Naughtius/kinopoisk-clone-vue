@@ -5,6 +5,7 @@
     "search": "Search...",
     "listEmpty": "THE LIST IS EMPTY",
     "list": "MY LISTS",
-    "listCreate": "Create list"
+    "listCreate": "Create list",
+    "login": "Auth"
   }
 }

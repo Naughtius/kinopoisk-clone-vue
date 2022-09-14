@@ -3,6 +3,8 @@ import HomeView from "../views/HomeView.vue";
 import AboutView from "../views/AboutView.vue";
 import SearchView from "../views/SearchView.vue";
 import MovieView from "../views/MovieView.vue";
+import SignInView from "../views/SignInView.vue";
+import SignUpView from "../views/SignUpView.vue";
 
 const routes: Array<RouteRecordRaw> = [
   {
@@ -24,6 +26,16 @@ const routes: Array<RouteRecordRaw> = [
     path: "/movie/:id",
     name: "movie",
     component: MovieView,
+  },
+  {
+    path: "/auth/sign-in",
+    name: "sign-in",
+    component: SignInView,
+  },
+  {
+    path: "/auth/sign-up",
+    name: "sign-up",
+    component: SignUpView,
   },
 ];
 
